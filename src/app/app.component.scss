@@ -1,0 +1,31 @@
+.menu {
+  top: 32px;
+  position: absolute;
+  left: 32px;
+}
+
+.offset-top {
+  z-index: -1;
+}
+
+.center-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+
+  h1 {
+    font-size: 144px;
+    letter-spacing: 42px;
+    font-weight: 100;
+  }
+
+  h2 {
+    letter-spacing: 6px;
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+}
