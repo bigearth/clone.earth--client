@@ -1,0 +1,22 @@
+<div class="menu">
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item> Software </button>
+    <button md-menu-item> Hardware </button>
+  </md-menu>
+
+  <button md-button [mdMenuTriggerFor]="appMenu">
+    Docs
+  </button>
+  <button md-button>
+    About
+  </button>
+  <button md-raised-button class="mat-primary" (click)="login()">Create an Account</button>
+</div>
+
+<figure class="offset-top">
+  <mh-pic [srcLink]="'/printer'" [extType]="'jpg'"></mh-pic>
+  <div class="center-align">
+    <h2>CLONE</h2>
+    <h1>EARTH</h1>
+  </div>
+</figure>

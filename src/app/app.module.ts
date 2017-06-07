@@ -6,6 +6,12 @@ import { MdMenuModule, MdButtonModule, MdTabsModule, MdToolbarModule } from '@an
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MhPicModule } from './mh/pic/mh-pic.module';
 import 'hammerjs';
+import {LoginModule} from "./login/login.module";
+import {ROUTES} from "./app.route";
+import {RouterModule} from "@angular/router";
+import {DashboardModule} from "./dashboard/dashboard.module";
+import {LandingModule} from "./landing/landing.module";
+import {IsAuthenticated} from "./login/is-authenticated.resolve";
 
 @NgModule({
   declarations: [
@@ -19,9 +25,13 @@ import 'hammerjs';
     MdTabsModule,
     FlexLayoutModule,
     MdToolbarModule,
-    MhPicModule
+    MhPicModule,
+    LoginModule,
+    DashboardModule,
+    LandingModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
-  providers: [],
+  providers: [IsAuthenticated],
   bootstrap: [AppComponent],
 })
 export class AppModule {

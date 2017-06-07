@@ -16,7 +16,7 @@ export class MhPicComponent implements OnInit {
   @Input('altText') altText = 'alt text default';
   @Input('extType') extType = 'jpg';
   constructor() {
-    // this.rootSrc = env.imgSrc;
+    this.rootSrc = env.imgSrc;
   }
 
   ngOnInit() {
