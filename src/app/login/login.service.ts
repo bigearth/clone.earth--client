@@ -12,7 +12,7 @@ export class LoginService {
   private _auth:auth0;
   private _connection:any;
 
-  constructor(public router: Router) {
+  constructor(private _router: Router) {
     this._auth = auth0;
     this._init()
   }
@@ -41,13 +41,12 @@ export class LoginService {
 
   public handleAuthentication(): void {
     this._connection.parseHash((err, authResult) => {
-      console.log(authResult, 'result');
+
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        this.router.navigate(['/dashboard']);
+        this._router.navigate(['dashboard'])
       } else if (err) {
-        this.router.navigate(['/dashboard']);
         console.log(err);
       }
     });
@@ -64,7 +63,7 @@ export class LoginService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    this.router.navigate(['/']);
+    this._router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {

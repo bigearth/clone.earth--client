@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import { LoginService } from '../login/login.service';
 /**
  * Created by matth on 6/6/2017.
  */
@@ -8,4 +9,10 @@ import {Component} from "@angular/core";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  constructor(private _auth:LoginService){}
+
+  public logout() {
+    this._auth.logout();
+  }
+}

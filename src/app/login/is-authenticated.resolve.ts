@@ -8,19 +8,15 @@ import { LoginService } from "./login.service";
 
 @Injectable()
 export class IsAuthenticated implements CanActivate {
-  constructor(private _auth: LoginService,private _router: Router) {
+  constructor(private _auth: LoginService, private _router: Router) {
   }
 
   canActivate() {
+    const redirect = () => {
+      this._router.navigate([ '/' ]);
+      return false;
+    };
 
-    if (this._auth.isAuthenticated()) {
-      this._router.navigate(['/dashboard']);
-      return true;
-    }
-    else {
-      this._router.navigate(['/']);
-    }
-
-    return false;
+    return this._auth.isAuthenticated() ? true : redirect();
   }
 }

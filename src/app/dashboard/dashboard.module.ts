@@ -6,6 +6,7 @@
 import {NgModule} from "@angular/core";
 import {DashboardComponent} from "./dashboard.component";
 import {LoginModule} from "../login/login.module";
+import { MdButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import {LoginModule} from "../login/login.module";
   ],
   imports: [
     LoginModule,
+    MdButtonModule,
   ],
 })
 export class DashboardModule{}
