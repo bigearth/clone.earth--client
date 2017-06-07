@@ -9,9 +9,10 @@ import 'hammerjs';
 import {LoginModule} from "./login/login.module";
 import {ROUTES} from "./app.route";
 import {RouterModule} from "@angular/router";
-import {DashboardModule} from "./dashboard/dashboard.module";
-import {LandingModule} from "./landing/landing.module";
+import {DashboardModule} from "./+dashboard/dashboard.module";
+import {LandingModule} from "./+landing/landing.module";
 import {IsAuthenticated} from "./login/is-authenticated.resolve";
+import { UserModule } from './+user/user.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {IsAuthenticated} from "./login/is-authenticated.resolve";
     MhPicModule,
     LoginModule,
     DashboardModule,
+    UserModule,
     LandingModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
